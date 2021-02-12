@@ -113,3 +113,19 @@ $(document).ready(function(){
     $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
   });
 });
+
+$(document).ready(function(){
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 800) {
+      $('.scroll-to').fadeIn();
+    } else {
+      $('.scroll-to').fadeOut();
+    }
+  });
+  $('.scroll-to').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 400);
+    return false;
+  });
+});
